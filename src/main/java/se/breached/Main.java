@@ -6,12 +6,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-
 import java.util.Objects;
 
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
+        // TODO: Increase windowsize
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("scene.fxml")));
         Scene scene = new Scene(root);
 

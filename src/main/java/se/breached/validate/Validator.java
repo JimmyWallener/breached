@@ -1,5 +1,5 @@
 package se.breached.validate;
 
-public interface Validate {
+public interface Validator {
     boolean validEmail(String email);
 }
