@@ -1,0 +1,33 @@
+
+Button{
+    -fx-background-color: rgb(88, 149, 169);
+    -fx-text-fill: white;
+    -fx-background-radius: 0px 5px 5px 0px;
+}
+
+TextField{
+    -fx-background-radius: 5px 0px 0px 5px;
+}
+
+PasswordField{
+    -fx-background-radius: 5px 0px 0px 5px;
+}
+Button:hover{
+    -fx-background-color: rgb(75, 132, 150);
+}
+
+Button:pressed{
+    -fx-background-color: black;
+}
+
+ScrollPane{
+    -fx-background-color: rgba(46,130,167,.5);
+}
+
+.layout {
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #265e7f, #388ead );
+}
+
+.innerLay {
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #245e7d, #368daa) ;
+}
