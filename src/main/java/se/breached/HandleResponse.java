@@ -50,7 +50,7 @@ public class HandleResponse implements Response {
 
     @Override
     public ArrayList<Breached> breachDataFromEmail(String url) {
-        // TODO: Handle if no result is found,. returns null now, which crashes application
+        // TODO: Handle if no result is found, returns null now, which crashes application
         ApiConnection conn = new ApiConnection();
         String result = conn.ApiResponse(url);
         ObjectMapper objectMapper = new ObjectMapper();

@@ -25,7 +25,7 @@ public class ApiConnection {
             connection.setRequestProperty("hibp-api-key", apiKey);
             connection.connect();
             int statusCode = connection.getResponseCode();
-
+            // TODO: Rebuild switch and handle other response codes with methods.
             if(statusCode == 200) {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 StringBuilder sb = new StringBuilder();
