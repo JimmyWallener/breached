@@ -11,9 +11,9 @@ import java.util.Objects;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        // TODO: Increase windowsize
+        // TODO: Increase window size
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("scene.fxml")));
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root,800,600);
 
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getClassLoader().getResource("styles.css")).toExternalForm());
 
