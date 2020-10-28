@@ -21,14 +21,14 @@ Button:pressed{
 }
 
 ScrollPane{
-     -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #245e7d, #368daa) ;
+    -fx-background-color: rgba(46,130,167,.5);
 }
 
 .layout {
-    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #265e7f, #388ead );
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #265e7f, #388ead);
 }
 
 .innerLay {
-    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #245e7d, #368daa) ;
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #245e7d, #368daa);
 }
 

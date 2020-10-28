@@ -49,10 +49,11 @@
             prefHeight="500.0"
             prefWidth="801.0">
 
-            <TextFlow fx:id="textFlow" layoutX="27.0" layoutY="14.0" prefHeight="500.0" prefWidth="785.0" styleClass="innerLay"/>
+            <TextFlow fx:id="textFlow" layoutX="27.0" layoutY="14.0" prefHeight="500" prefWidth="785.0" styleClass="innerLay"/>
 
     </ScrollPane>
-    <ImageView fitHeight="95.0" fitWidth="181.0" layoutX="500.0">
+
+    <ImageView fx:id="imageView" fitHeight="95.0" fitWidth="181.0" layoutX="500.0">
         <Image url="@/logos/battery.png"/>
     </ImageView>
 
