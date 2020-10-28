@@ -6,17 +6,18 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="layout" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.breached.Controller">
-   <children>
-      <Button id="buttons" layoutX="313.0" layoutY="17.0" mnemonicParsing="false" stylesheets="@styles.css" text="';--Breached?" />
-      <Button layoutX="313.0" layoutY="54.0" mnemonicParsing="false" text="';--Breached?" />
-      <TextField layoutX="25.0" layoutY="17.0" prefHeight="26.0" prefWidth="288.0" promptText="search for Email" />
-      <PasswordField layoutX="25.0" layoutY="54.0" prefHeight="26.0" prefWidth="288.0" promptText="search for Password" />
-          <ScrollPane layoutY="99.0" prefHeight="301.0" prefWidth="600.0">
-        <content>
-          <AnchorPane styleClass="innerLay" minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="585.0" />
-        </content>
-      </ScrollPane>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="layout" stylesheets="@styles.css"
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="se.breached.Controller">
+    <Button fx:id="emailBtn" id="buttons" layoutX="313.0" layoutY="17.0" mnemonicParsing="false"
+            stylesheets="@styles.css" text="';--Breached?"/>
+    <Button fx:id="passwordBtn" layoutX="313.0" layoutY="54.0" mnemonicParsing="false" text="';--Breached?"/>
+    <TextField fx:id="emailField" layoutX="25.0" layoutY="17.0" prefHeight="26.0" prefWidth="288.0"
+               promptText="search for Email"/>
+    <PasswordField fx:id="passwordField" layoutX="25.0" layoutY="54.0" prefHeight="26.0" prefWidth="288.0"
+                   promptText="search for Password"/>
+    <ScrollPane layoutY="99.0" prefHeight="301.0" prefWidth="600.0">
+        <AnchorPane styleClass="innerLay" minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="585.0"/>
+    </ScrollPane>
 
-   </children>
 </AnchorPane>

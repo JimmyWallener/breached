@@ -1,95 +1,98 @@
 package se.breached.model;
 
-
-import java.time.LocalDate;
-import java.time.ZonedDateTime;
 import java.util.List;
+import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Breached{
 
-    private String name;
-    private String title;
-    private String domain;
-    private LocalDate breachDate;
-    private ZonedDateTime addedDate;
-    private ZonedDateTime modifiedDate;
+public class Breached implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+
+    private String name, title, domain, breachDate, addedDate,modifiedDate,description, logoPath;
     private int pwnCount;
-    private String description;
     private List<String> dataClasses;
+    @JsonProperty("IsVerified")
     private boolean isVerified;
+    @JsonProperty("IsFabricated")
     private boolean isFabricated;
+    @JsonProperty("IsSensitive")
     private boolean isSensitive;
+    @JsonProperty("IsRetired")
     private boolean isRetired;
-    private String logoPath;
+    @JsonProperty("IsSpamList")
+    private boolean isSpamList;
 
     public String getName() {
         return name;
     }
-
+    @JsonSetter("Name")
     public void setName(String name) {
         this.name = name;
     }
-
+    @JsonGetter("Title")
     public String getTitle() {
         return title;
     }
-
+    @JsonSetter("Title")
     public void setTitle(String title) {
         this.title = title;
     }
-
+    @JsonGetter("Domain")
     public String getDomain() {
         return domain;
     }
-
+    @JsonSetter("Domain")
     public void setDomain(String domain) {
         this.domain = domain;
     }
-
-    public LocalDate getBreachDate() {
+    @JsonGetter("BreachDate")
+    public String getBreachDate() {
         return breachDate;
     }
-
-    public void setBreachDate(LocalDate breachDate) {
+    @JsonSetter("BreachDate")
+    public void setBreachDate(String breachDate) {
         this.breachDate = breachDate;
     }
-
-    public ZonedDateTime getAddedDate() {
+    @JsonGetter("AddedDate")
+    public String getAddedDate() {
         return addedDate;
     }
-
-    public void setAddedDate(ZonedDateTime addedDate) {
+    @JsonSetter("AddedDate")
+    public void setAddedDate(String addedDate) {
         this.addedDate = addedDate;
     }
-
-    public ZonedDateTime getModifiedDate() {
+    @JsonGetter("ModifiedDate")
+    public String getModifiedDate() {
         return modifiedDate;
     }
-
-    public void setModifiedDate(ZonedDateTime modifiedDate) {
+    @JsonSetter("ModifiedDate")
+    public void setModifiedDate(String modifiedDate) {
         this.modifiedDate = modifiedDate;
     }
-
+    @JsonGetter("PwnCount")
     public int getPwnCount() {
         return pwnCount;
     }
-
+    @JsonSetter("PwnCount")
     public void setPwnCount(int pwnCount) {
         this.pwnCount = pwnCount;
     }
-
+    @JsonGetter("Description")
     public String getDescription() {
         return description;
     }
-
+    @JsonSetter("Description")
     public void setDescription(String description) {
         this.description = description;
     }
-
+    @JsonGetter("DataClasses")
     public List<String> getDataClasses() {
         return dataClasses;
     }
-
+    @JsonSetter("DataClasses")
     public void setDataClasses(List<String> dataClasses) {
         this.dataClasses = dataClasses;
     }
@@ -125,12 +128,16 @@ public class Breached{
     public void setRetired(boolean retired) {
         isRetired = retired;
     }
+    public boolean isSpamList() { return isSpamList; }
 
+    public void setSpamList(boolean spamList) { isSpamList = spamList; }
+    @JsonGetter("LogoPath")
     public String getLogoPath() {
         return logoPath;
     }
-
+    @JsonSetter("LogoPath")
     public void setLogoPath(String logoPath) {
         this.logoPath = logoPath;
     }
+
 }

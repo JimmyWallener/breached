@@ -2,7 +2,7 @@ package se.breached.validate;
 
 import java.util.regex.Pattern;
 
-public class IsitValid implements Validate{
+public class ValidateEmail implements Validator {
 
     public boolean validEmail(String email){
         //regex is RFC822 adapted for Java!
