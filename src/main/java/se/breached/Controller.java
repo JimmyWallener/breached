@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import se.breached.model.Breached;
@@ -15,6 +17,8 @@ public class Controller {
     // API has {Account} - Email/Passwords and {Parameters} and different {Service}. Need to work out logic for that
     private final String uri = "https://haveibeenpwned.com/api/v3/breachedaccount/";
     private final String truncate = "?truncateResponse=false";
+    Image image1 = new Image("/logos/breached.png", true);
+    @FXML private ImageView imageView;
     @FXML private TextField emailField;
     @FXML private TextField passwordField;
     @FXML private Button emailBtn;
@@ -40,10 +44,11 @@ public class Controller {
                 HandleResponse hr = new HandleResponse();
                 List<Breached> emailData = hr.breachDataFromEmail(url);
                 emailData.forEach(data -> {
+                    imageView.setImage(image1);
                     textFlow.setTabSize(2);
                     textFlow.setLineSpacing(2);
                     textFlow.getChildren().add(new Text(data.toString()));
-
+                    textFlow.setStyle("-fx-background-color: red;");
                 });
             }
         });
