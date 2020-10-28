@@ -21,7 +21,7 @@ Button:pressed{
 }
 
 ScrollPane{
-    -fx-background-color: rgba(46,130,167,.5);
+     -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #245e7d, #368daa) ;
 }
 
 .layout {
@@ -31,3 +31,4 @@ ScrollPane{
 .innerLay {
     -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #245e7d, #368daa) ;
 }
+
