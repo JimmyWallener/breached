@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import se.breached.model.Breached;
 import se.breached.validate.ValidateEmail;
 
@@ -17,6 +19,7 @@ public class Controller {
     @FXML private TextField passwordField;
     @FXML private Button emailBtn;
     @FXML private Button passwordBtn;
+    @FXML private TextFlow textFlow;
 
     public void initialize() {
 
@@ -36,7 +39,12 @@ public class Controller {
                 String url = String.format("%s%s%s",uri,emailField.getText(),truncate);
                 HandleResponse hr = new HandleResponse();
                 List<Breached> emailData = hr.breachDataFromEmail(url);
-                emailData.forEach(data -> System.out.println(data.getDescription()));
+                emailData.forEach(data -> {
+                    textFlow.setTabSize(2);
+                    textFlow.setLineSpacing(2);
+                    textFlow.getChildren().add(new Text(data.toString()));
+
+                });
             }
         });
     }

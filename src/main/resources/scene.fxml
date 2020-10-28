@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
-<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="layout" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.breached.Controller">
+<?import javafx.scene.text.TextFlow?>
+<AnchorPane styleClass="layout" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se.breached.Controller">
     <Button id="buttons" fx:id="emailBtn" layoutX="313.0" layoutY="17.0" mnemonicParsing="false" stylesheets="@styles.css" text="';--Breached?" />
     <Button fx:id="passwordBtn" layoutX="313.0" layoutY="54.0" mnemonicParsing="false" text="';--Breached?" />
     <TextField fx:id="emailField" layoutX="25.0" layoutY="17.0" prefHeight="26.0" prefWidth="288.0" promptText="search for Email" />
     <PasswordField fx:id="passwordField" layoutX="25.0" layoutY="54.0" prefHeight="26.0" prefWidth="288.0" promptText="search for Password" />
-    <ScrollPane layoutY="99.0" prefHeight="500.0" prefWidth="800.0">
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="785.0" styleClass="innerLay" />
+    <ScrollPane fitToHeight="true" layoutY="99.0" prefHeight="500.0" prefWidth="800.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="785.0" styleClass="innerLay">
+            <TextFlow fx:id="textFlow" layoutX="27.0" layoutY="14.0" prefHeight="482.0" prefWidth="751.0"/>
+        </AnchorPane>
     </ScrollPane>
-   <ImageView fitHeight="95.0" fitWidth="181.0" layoutX="500.0">
-      <image>
-         <Image url="@/logos/battery.png" />
-      </image>
-   </ImageView>
+    <ImageView fitHeight="95.0" fitWidth="181.0" layoutX="500.0">
+        <Image url="@/logos/battery.png"/>
+    </ImageView>
 
 </AnchorPane>
