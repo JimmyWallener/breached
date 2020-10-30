@@ -23,6 +23,11 @@ public class HandleResponse implements Response {
         return password.substring(5);
     }
 
+    /*
+    * Hashes password and creates a prefix (5 chars), API returns list of matches from partial search.
+    * Second search uses the suffix (35 chars) and search for a match.
+    * If match exists, returns last digit which represents the number of compromises password has been involved in.
+    * */
     @Override
     public AtomicInteger numberOfBreaches(String password) {
         final String pwnedPassword = "https://api.pwnedpasswords.com/range/";
@@ -36,7 +41,7 @@ public class HandleResponse implements Response {
             String[] result = conn.ApiResponse(pwnedPassword + kAnonymity).split("\n");
             AtomicInteger breaches = new AtomicInteger();
 
-           Arrays.stream(result).forEach(e -> {
+            Arrays.stream(result).forEach(e -> {
                 if(e.contains(suffixValue)) {
                     breaches.set(Integer.parseInt(e.substring(36)));
                 }
@@ -47,10 +52,10 @@ public class HandleResponse implements Response {
         }
         return null;
     }
-
+    // Creates a API request then maps string with Model for structure and returns an ArrayList
     @Override
     public ArrayList<Breached> breachDataFromEmail(String url) {
-        // TODO: Handle if no result is found, returns null now, which crashes application
+
         ApiConnection conn = new ApiConnection();
         String result = conn.ApiResponse(url);
         ObjectMapper objectMapper = new ObjectMapper();
