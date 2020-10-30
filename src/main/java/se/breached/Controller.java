@@ -117,8 +117,7 @@ public class Controller {
                     textFlow.setStyle("-fx-background-color: red;");
                 });
             } else {
-                String errorMsg = ApiConnection.errorMessage();
-                Text text = new Text(errorMsg);
+                Text text = new Text(ApiConnection.errorMessage());
                 text.setFont(Font.font("Helvetica", FontWeight.BOLD, 15));
                 textFlow.setLineSpacing(5);
                 textFlow.setPadding(new Insets(30, 80, 30, 80));
