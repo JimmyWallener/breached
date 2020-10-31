@@ -25,52 +25,24 @@ public class Controller {
     @FXML private TextFlow textFlow;
 
     public void initialize() {
-
-        passwordBtn.setOnAction(e -> {
-            if(textFlow != null){
-                textFlow.getChildren().clear();
-                textFlow.setStyle("-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #245e7d, #368daa)");
-                imageView.setImage(notCompromisedImg);
-            }
-            hasPasswordBeenCompromised();
-        });
+        // On button/Enter press it checks if data already exists, if so clear it and then runs another search
+        passwordBtn.setOnAction(e -> runPasswordSearchResult());
         passwordField.setOnKeyPressed(e -> {
             if (e.getCode().equals(KeyCode.ENTER)){
-                if(textFlow != null){
-                    textFlow.getChildren().clear();
-                    textFlow.setStyle("-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #245e7d, #368daa)");
-                    imageView.setImage(notCompromisedImg);
-                }
-                hasPasswordBeenCompromised();
+                runPasswordSearchResult();
             }
         });
 
-        emailBtn.setOnAction(e -> {
-            if(textFlow != null){
-                textFlow.getChildren().clear();
-                textFlow.setStyle("-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #245e7d, #368daa)");
-                imageView.setImage(notCompromisedImg);
-            }
-            hasEmailBeenCompromised();
-        });
+        emailBtn.setOnAction(e -> runEmailSearchResult());
         emailField.setOnKeyPressed(e -> {
             if (e.getCode().equals(KeyCode.ENTER)){
-                if(textFlow != null){
-                    textFlow.getChildren().clear();
-                    textFlow.setStyle("-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #245e7d, #368daa)");
-                    imageView.setImage(notCompromisedImg);
-                }
-                hasEmailBeenCompromised();
+                runEmailSearchResult();
             }
-        });
-
-        imageView.setOnMouseClicked(e -> {
-            textFlow.getChildren().clear();
-            textFlow.setStyle("-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #245e7d, #368daa)");
-            imageView.setImage(notCompromisedImg);
         });
 
     }
+    // Methods here:
+
     public void hasPasswordBeenCompromised(){
         HandleResponse hr = new HandleResponse();
         int number = Integer.parseInt(String.valueOf(hr.numberOfBreaches(passwordField.getText().trim())));
@@ -124,6 +96,25 @@ public class Controller {
                 textFlow.getChildren().add(text);
             }
         }
+    }
+    private void runPasswordSearchResult(){
+
+        if(textFlow != null) {
+            textFlow.getChildren().clear();
+            textFlow.setStyle("-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #245e7d, #368daa)");
+            imageView.setImage(notCompromisedImg);
+        }
+        hasPasswordBeenCompromised();
+    }
+    private void runEmailSearchResult(){
+
+        if(textFlow != null) {
+            textFlow.getChildren().clear();
+            textFlow.setStyle("-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #245e7d, #368daa)");
+            imageView.setImage(notCompromisedImg);
+        }
+        hasEmailBeenCompromised();
+
     }
 
 }

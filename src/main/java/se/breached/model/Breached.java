@@ -141,11 +141,10 @@ public class Breached implements Serializable {
     }
     @Override
     public String toString(){
-        String string = String.format("%nName: %s%nTitle: %s%nDomain: %s%nBreach Date: %s%n" +
+        return String.format("%nName: %s%nTitle: %s%nDomain: %s%nBreach Date: %s%n" +
                 "Added Date: %s%nModified Date: %s%nPwnCount: %d%nDescription: %n%s%n" +
                 "DataClasses: %s%nIsVerified: %b%nIsFabricated: %b%nIsSensitive: %b%n"+
                 "IsRetired: %b%nIsSpamList: %b%n%n%n" +
                 "",name,title,domain,breachDate,addedDate,modifiedDate,pwnCount,description,dataClasses,isVerified,isFabricated,isSensitive,isRetired,isSpamList);
-        return string;
     }
 }
